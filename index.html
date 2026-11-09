@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS';
+            letter-spacing: 1px;
+            font-size: 15px;
+        }
+        body
+        {
+            background-color: rgb(197, 225, 234);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body .main-div
+        {
+            /* display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; */
+
+            width: 450px;
+            
+            margin: 50px;
+            padding: 20px;
+            border-radius: 10px;
+
+            background-color: white;
+            box-shadow: 2px 2px 10px black ;
+        }
+        form
+        {
+            width: 100%;
+            padding: 25px;
+        }
+        .main-div h1
+        {
+            text-align: center;
+            font-size: 30px;
+            color: blue;
+        }
+        dt
+        {
+            margin: 10px 0px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        input
+        {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid grey;
+            font-size: 15px;
+            outline: none;
+
+        }
+        input:required:valid
+        {
+            border: 2px solid green;
+            border-left: 5px solid green;
+        }
+        input:read-only{
+            cursor: not-allowed;
+        }
+        input:read-only:focus
+        {
+            outline: none;
+            border: 2px solid blue;
+        }
+        
+        input:required
+        {
+            border: 1px  solid red;
+            border-left: 4px solid red;
+        }
+        .age:in-range
+        {
+            background-color: rgba(30, 173, 30, 0.2);
+            width: 100%;
+        }
+        .age:out-of-range
+        {
+            background-color: rgba(208, 24, 24,0.2);
+            width: 100%;
+        }
+      
+        .terms
+        {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0px;
+            width: auto;
+        }
+        .terms input
+        {
+            width: auto;
+        }
+        input:checked 
+        {
+        }
+        button
+        {
+            background-color: blue;
+            color: white;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button:hover
+        {
+            background-color: green;
+        }
+
+        input[type="checkbox"]:checked
+        {
+            accent-color: green;
+        }
+        input[type="checkbox"]:checked+label
+        {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <h1>Student Registration Form</h1>
+        <form>
+            <dl>
+                <dt>Student Id</dt>
+                <dd><input type="text" value="STD2026001" readonly></dd>
+
+                <dt>Full Name</dt>
+                <dd><input type="text" placeholder="Enter Full Name" required></dd>
+
+                <dt>Email</dt>
+                <dd><input type="email" placeholder="Enter Emial" required></dd>
+
+                <dt>Age</dt>
+                <dd><input class="age" type="number" placeholder="Enter Age" min="18" max="30" required></dd>
+
+                
+                <div class="terms"><input type="checkbox" id="terms-conditions"> <label for="terms-conditions">I Accept Terms & Conditions</label></div>
+                
+                <button>Register</button>
+            </dl>
+        </form>
+    </div>
+</body>
+</html>
